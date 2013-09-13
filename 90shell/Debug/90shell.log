@@ -1,11 +1,13 @@
-﻿Build started 2013/9/9 16:16:24.
+﻿Build started 2013/9/13 17:07:35.
      1>Project "E:\Project\90shell\90shell\90shell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\90shell.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\90shell.unsuccessfulbuild".
        ClCompile:
          All outputs are up-to-date.
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\90shell.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 90shell.cpp
          90shell.cpp
+     1>e:\project\90shell\90shell\90shell.cpp(57): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -28,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.89
+Time Elapsed 00:00:01.00

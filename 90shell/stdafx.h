@@ -23,7 +23,7 @@
 
 #include <ws2tcpip.h>
 #include <process.h>
-
+#include <string>
 
 #include <stdio.h>
 #include "90shell.h"

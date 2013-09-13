@@ -12,3 +12,4 @@ typedef struct _Shell{
 	HANDLE hServerBrokenEvent;
 	DWORD cmdStack;//how many cmd shell called
 }SHELL;
+void GB2312ToUTF_8(std::string& pOut,char *pText, int pLen);
