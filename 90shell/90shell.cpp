@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #define PORT _T("1990")
-//#define DOMAIN90 _T("192.168.1.10")
-#define DOMAIN90 _T("vps.after1990s.info")
+#define DOMAIN90 _T("192.168.1.10")
+//#define DOMAIN90 _T("vps.after1990s.info")
 
 void UnicodeToUTF_8(char* pOut,WCHAR* pText)
 {

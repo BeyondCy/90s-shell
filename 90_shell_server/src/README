@@ -1,0 +1,15 @@
+mainthread: shell
+2nd th: listen
+3nd-nth thread: process;
+
+avaiable cmd:
+ls
+
+switch #N
+
+exit(exit command will never sendto client).
+
+
+bugs:
+when client host crash, the server can't dectect that crash.
+send msg correct but simply no reply.
