@@ -1,33 +1,9 @@
-﻿Build started 2013/9/16 11:11:32.
-     1>Project "E:\Project\90shell\90shell\90shell.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\90shell.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\90shell.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 90shell.cpp
-         90shell.cpp
-     1>e:\project\90shell\90shell\90shell.cpp(57): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-       ResourceCompile:
-         All outputs are up-to-date.
-       ManifestResourceCompile:
-         All outputs are up-to-date.
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Project\90shell\Debug\90shell.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\90shell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Project\90shell\Debug\90shell.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Project\90shell\Debug\90shell.lib" /MACHINE:X86 Debug\90shell.res
-         Debug\90shell.exe.embed.manifest.res
-         Debug\90shell.obj
-         Debug\stdafx.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\90shell.exe.embed.manifest" /manifest Debug\90shell.exe.intermediate.manifest
-         All outputs are up-to-date.
-       LinkEmbedManifest:
-         All outputs are up-to-date.
-         90shell.vcxproj -> E:\Project\90shell\Debug\90shell.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\90shell.unsuccessfulbuild".
-         Touching "Debug\90shell.lastbuildstate".
-     1>Done Building Project "E:\Project\90shell\90shell\90shell.vcxproj" (build target(s)).
+﻿Build started 2013/9/16 14:01:41.
+     1>Project "E:\Project\90shell\90shell\90shell.vcxproj" on node 2 (clean target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\90shell.lastbuildstate".
+     1>Done Building Project "E:\Project\90shell\90shell\90shell.vcxproj" (clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.01
+Time Elapsed 00:00:00.07
