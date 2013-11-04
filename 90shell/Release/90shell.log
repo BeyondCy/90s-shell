@@ -1,4 +1,4 @@
-﻿Build started 2013/9/13 17:09:00.
+﻿Build started 2013/11/4 14:31:23.
      1>Project "E:\Project\90shell\90shell\90shell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\90shell.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -26,4 +26,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.18
+Time Elapsed 00:00:02.61
