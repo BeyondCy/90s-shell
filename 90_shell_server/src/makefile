@@ -1,4 +1,4 @@
-all : shell_server
+all : shell_server clean
 
 shell_server : server.o alive_client.o shell.o 90s\ shell\ server.o
 	g++  server.o alive_client.o shell.o 90s\ shell\ server.o -lpthread -lreadline -o shell_server

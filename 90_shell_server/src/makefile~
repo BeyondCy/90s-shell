@@ -14,5 +14,6 @@ alive_client.o:
 
 server.o:
 	g++ -c server.cpp
-
+clean:
+	rm -f *.o
 
