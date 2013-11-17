@@ -11,5 +11,5 @@ exit(exit command will never sendto client).
 
 
 bugs:
-when client host crash, the server can't dectect that crash.
+when client host crash, the server can't dectect the crash.
 send msg correct but simply no reply.

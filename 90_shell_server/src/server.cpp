@@ -10,16 +10,19 @@ extern alive_client g_client;
 int g_slisten;
 void* init_server(void * unuse)
 {
-	g_slisten = socket(AF_INET, SOCK_STREAM, NULL);
+	g_slisten = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	struct sockaddr_in addr;
 	int addr_len = sizeof(addr);
 	memset(&addr, 0,sizeof(addr));
 	addr.sin_family = AF_INET;
 	addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	addr.sin_port = htons(PORT);
-	while (bind (g_slisten, (struct sockaddr*)&addr, addr_len)!= -1)
+	while (bind (g_slisten, (struct sockaddr*)&addr, addr_len)!= -1){
+		printf("Initial listen on port %d.\n",PORT);
 		sleep(1);
+	}
 	listen(g_slisten, 10);
+	printf("Listen on port %d success.\n",PORT);
 	pthread_t t;
 	while (true)
 	{

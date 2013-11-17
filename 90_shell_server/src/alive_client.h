@@ -26,7 +26,7 @@ struct client{
 class alive_client{
 public:
 	std::vector<struct client> client;
-	bool insert(struct client *c);
+
 	struct client & get_client_by_socket(int socket) throw(int);
 	struct client * get_client_by_index(int index)throw(int);
 	void remove(int socket);
@@ -42,7 +42,8 @@ public:
 	//int set_buff_used_len(int socket, int used_len);
 	//std::string& get_decimal_ip(int socket);
 
-	void clear(void);//delete all client, the server will shutdown.
+	bool  insert(struct client *c);
+	void  clear(void);//delete all client, the server will shutdown.
 };
 
 

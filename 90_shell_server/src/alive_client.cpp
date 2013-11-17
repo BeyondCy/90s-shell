@@ -38,7 +38,7 @@ std::string alive_client::get_all_client(void)
 	for (std::vector<struct client>::iterator itr = client.begin(); itr!=client.end(); ++itr)
 	{
 
-		snprintf(buf, 2, "%d", i);
+		snprintf(buf, 2, "%d",i++);
 		result += buf;
 		result += ". ";
 		result += itr->ip;
@@ -63,7 +63,7 @@ struct client & alive_client::get_client_by_socket(int socket) throw(int)
 	}
 	throw -1;
 }
-void alive_client::clear(void)
+void  alive_client::clear(void)
 {//delete all client, the server will shutdown.
 	for (std::vector<struct client>::iterator itr = client.begin(); itr!=client.end(); ++itr)
 	{
