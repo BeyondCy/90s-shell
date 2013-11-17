@@ -1,7 +1,7 @@
 all : shell_server
 
 shell_server : server.o alive_client.o shell.o 90s\ shell\ server.o
-	g++  server.o alive_client.o shell.o 90s\ shell\ server.o -lpthread -lreadline -o shell_server
+	g++  server.o alive_client.o shell.o 90s\ shell\ server.o -lpthread -lreadlines -o shell_server
 
 90s\ shell\ server.o:
 	g++ -c 90s\ shell\ server.cpp
@@ -14,6 +14,5 @@ alive_client.o:
 
 server.o:
 	g++ -c server.cpp
-clean:
-	rm -f *.o
+
 
