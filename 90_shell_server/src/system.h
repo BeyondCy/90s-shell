@@ -24,6 +24,7 @@
 #include <exception>
 #include <errno.h>
 #include <stdio.h>
+#include <signal.h>
 #include <readline/readline.h>
 #include <readline/history.h>
 #endif /* SYSTEM_H_ */

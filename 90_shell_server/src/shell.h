@@ -9,12 +9,6 @@
 #define SHELL_H_
 #include "alive_client.h"
 #include "system.h"
-void shell_init(void);
-//
-std::string shell_prompt(struct client  *c);//0 for no client
-//
-////process command, return string include the prompt
-std::string shell_process_cmd(std::string cmd, struct client * pc/*in:the current client,out:the new client*/);
 
 /*
  * 初始化shell，记录目前操作的client。
@@ -25,15 +19,20 @@ std::string shell_process_cmd(std::string cmd, struct client * pc/*in:the curren
  * switch N 操作第N个客户端
  * exit 推出客户端或者程序
 */
-/*class shell
+class shell
 {
 public:
 	shell();
 	~shell();
-	void process();
+
+	void readloop();
+	//process command, save return str in result.
+	void process(std::string  cmd);
 private:
-  struct client *current;
-  WINDOW *wnd;
-  std::string prompt;//显示的提示符
-};*/
+  std::string result;
+  struct client *pc;
+  std::string prompt();//显示的提示符
+
+
+};
 #endif /* SHELL_H_ */

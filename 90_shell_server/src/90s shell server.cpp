@@ -13,9 +13,10 @@
 #include <iostream>
 using namespace std;
 alive_client g_client;
+shell  *g_pshell = new shell();
 int main() {
 	pthread_t t;
 	pthread_create(&t,NULL, init_server, NULL);
-	shell_init();
+	g_pshell->readloop();
 	return 0;
 }

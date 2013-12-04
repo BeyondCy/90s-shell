@@ -7,27 +7,38 @@
 #include "shell.h"
 extern alive_client g_client;
 extern int g_slisten;
-void shell_init(void)
+extern shell  *g_pshell;
+
+void process_ctrl_c(int signo)
 {
-	struct client *pc = (struct client*)malloc(sizeof(struct client));
+	printf("use exit command exit shell\n");
+	return;
+}
+shell::shell()
+{
+	pc = (struct client*)malloc(sizeof(struct client));
 	memset(pc, 0, sizeof(struct client));
 	pc->socket = 0;
+	signal(SIGINT,process_ctrl_c);
+}
+void shell::readloop()
+{
 	std::cout << "welcome 90s shell server" << std::endl;
-	std::cout << shell_prompt(pc);
-
+	std::cout << prompt();
 	while (true)
 	{
 		char *cmd;
-		cmd = readline(shell_prompt(pc).c_str());
-		std::cout << shell_process_cmd(cmd, pc);
+		cmd = readline(prompt().c_str());
+		process(cmd);
+		std::cout << result;
 		free(cmd);
 	}
 }
-std::string shell_process_cmd(std::string cmd, struct client * pc)
+void shell::process(std::string cmd)
 {
 	//the pc is different frome the one in vector.when i found the switch one, read the buff, copy others to pc,
 	//attation, when change content that pointer assigned in pc, the vector content will change too.
-	std::string result = "";
+	result.clear();
 	if (cmd.length()!=0)
 	{
 		add_history(cmd.c_str());
@@ -38,8 +49,7 @@ std::string shell_process_cmd(std::string cmd, struct client * pc)
 		if (cmd.compare("exit")==0){
 			pc->active = false;
 			memset(pc, 0, sizeof(struct client));
-			result += shell_prompt(pc);
-			return result;
+			return;
 		}
 		cmd += "\r\n";
 		if (send(pc->socket, cmd.c_str(), cmd.length(), NULL)!=cmd.length())
@@ -47,16 +57,16 @@ std::string shell_process_cmd(std::string cmd, struct client * pc)
 			//client crash ,del it and return shell
 			g_client.remove(pc->socket);
 			memset(pc, 0, sizeof(struct client));
-			result = shell_prompt(pc);
+			result = prompt();
 		}
-		return result;
+		return;
 	}
 	if (cmd.compare("ls")==0)
 	{
 		result += g_client.get_all_client();
 		result += "\n";
-		result += shell_prompt(pc);
-		return result;
+		result += prompt();
+		return;
 	}
 	else if (cmd.find("switch")==0)
 	{
@@ -79,9 +89,9 @@ std::string shell_process_cmd(std::string cmd, struct client * pc)
 		catch(int e)
 		{
 			result += "no such client";
-			return result;
+			return;
 		}
-		return result;
+		return;
 	}
 	else if (cmd.compare("exit")==0)
 	{
@@ -95,24 +105,28 @@ std::string shell_process_cmd(std::string cmd, struct client * pc)
 "ls -- list all client\n\
 switch N -- switch to number N client shell\n\
 exit -- exit current shell\n";
-		result += shell_prompt(pc);
+		result += prompt();
 	}
 	else
 	{
 		result = "Invalid command, type \"help\" for help.\n";
-		result += shell_prompt(pc);
+		result += prompt();
 	}
-	return result;
+	return;
 }
-std::string shell_prompt(struct client  *c)//0 for no client
+std::string shell::prompt()//0 for no client
 {
-	if (c->socket==0)
+	if (pc->socket==0)
 		return ">";
-	if (c->active==true)
+	if (pc->active==true)
 		return "";
-	std::string result = c->ip;
+	std::string result = pc->ip;
 	result += ">";
 	return result;
-
 }
+shell::~shell()
+{
+	free (pc);
+}
+
 

@@ -12,4 +12,5 @@ exit(exit command will never sendto client).
 
 bugs:
 when client host crash, the server can't dectect the crash.
-send msg correct but simply no reply.
+未处理ctrl+c 信号。
+未检查加入的客户端是否重复。
